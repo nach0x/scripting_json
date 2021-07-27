@@ -14,7 +14,7 @@ func main() {
 
 	app, err := newrelic.NewApplication(
 		newrelic.ConfigAppName("secops"),
-		newrelic.ConfigLicense("__YOUR_NEW_RELIC_LICENSE_KEY__"),
+		newrelic.ConfigLicense("AAAXX5554432DDDFDFDS"),
 		func(config *newrelic.Config) {
 			config.CustomInsightsEvents.Enabled = true
 		},
