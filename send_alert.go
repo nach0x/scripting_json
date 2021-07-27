@@ -14,7 +14,7 @@ func main() {
 
 	app, err := newrelic.NewApplication(
 		newrelic.ConfigAppName("secops"),
-		newrelic.ConfigLicense("AAAXX5554432DDDFDFDS"),
+		newrelic.ConfigLicense("AWS_SECRET_MANAGER"),
 		func(config *newrelic.Config) {
 			config.CustomInsightsEvents.Enabled = true
 		},
@@ -26,7 +26,7 @@ func main() {
 	Alert := Read_alert("phpmyadmin")
 
 	if Alert == true {
-		if err := Send_alert("AABBAA333AS"); err != nil {
+		if err := Send_alert("AWS_SECRET_MANAGER"); err != nil {
 			panic(err)
 		}
 		http.HandleFunc(newrelic.WrapHandleFunc(app, "/custom_event", customEvent))
