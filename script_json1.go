@@ -80,14 +80,12 @@ type info_photos struct {
 
 var info_u Info_user
 
-//var info_p info_posts
 
 func main() {
 	Post(User())
 	Album(User())
 	Photo()
 	Convert()
-	//fmt.Println(info_u)
 }
 
 func User() (int, error) {
@@ -108,15 +106,8 @@ func User() (int, error) {
 		return 0, err
 	}
 
-	//usr := users[0].ID
-
-	//fmt.Println(users[0].ID)
-
-	//for _, user := range users {
-	//	fmt.Println(user.ID)
-	//}
+	
 	return users[0].ID, nil
-	//fmt.Println(users[0].Username)
 }
 
 func Post(data2 int, err error) {
@@ -139,7 +130,6 @@ func Post(data2 int, err error) {
 	}
 	for _, post := range posts {
 		info_u.Posts = append(info_u.Posts, info_posts{post.Title})
-		//fmt.Println(post.Title)
 	}
 }
 
@@ -163,9 +153,7 @@ func Album(data2 int, err error) {
 	}
 	for _, album := range al {
 		info_u.Albums = append(info_u.Albums, info_albums{album.Title})
-		//fmt.Println(album.Title)
 	}
-	//fmt.Println(users[0].Username)
 }
 
 func Photo() {
@@ -187,9 +175,7 @@ func Photo() {
 	}
 	for _, photo := range ph {
 		info_u.Photos = append(info_u.Photos, info_photos{photo.Url})
-		//fmt.Println(photo.Url)
 	}
-	//fmt.Println(users[0].Username)
 }
 
 func Convert() {
